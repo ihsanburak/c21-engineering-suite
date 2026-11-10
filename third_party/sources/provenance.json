@@ -1,0 +1,17 @@
+{
+  "nsdl": {
+    "repository": "https://github.com/Vogtinator/nSDL",
+    "commit": "cf4c07a6c8ae3c75e058d460763587307d5683cb",
+    "sdk_provenance_commit": "052f0ac470b578e866956a540236f83c34b8fe99",
+    "subsequent_sdk_binary_rebuild": "fba0e804f36464596ed686dc32a2abe69c4052a5",
+    "original_rebuild_toolchain": "GCC 10.2 / Newlib 4.0 per SDK commit message",
+    "archive_sha256": "b1885dbc2c7444d0fdd646323f462af0c01effe9f4a90b53b36c7766bc975808"
+  },
+  "ndless": {
+    "repository": "https://github.com/ndless-nspire/Ndless",
+    "commit": "37d61aa22762171ffc9b0abf2565f13d09aec70f",
+    "archive_sha256": "308641177562377549ec1d235a66913b5712979f901f9b3692707ead1066fd6c",
+    "scope": "SDK include, libndls, libsyscalls, system and uncompressed compatibility-loader source with root license/README; not firmware, SDK binaries or toolchain"
+  },
+  "status": "Pinned official source archives supplied for licensed redistribution/relinking; source contents retain upstream terms"
+}

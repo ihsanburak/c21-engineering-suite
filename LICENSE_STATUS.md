@@ -1,0 +1,1 @@
+Original C21-owned code is now MIT licensed with owner authorization. See [LICENSE](LICENSE), [scope/exclusions](LICENSE_SCOPE.md), [third-party notices](THIRD_PARTY_NOTICES.md) and [redistribution materials](third_party/REDISTRIBUTION.md). This is not a blanket MIT relicense of dependencies or Eagle artwork.

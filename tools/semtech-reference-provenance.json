@@ -1,0 +1,40 @@
+{
+  "repository": "https://github.com/Lora-net/LoRaMac-node",
+  "commit": "cf779a46f52f9b22395a207c6853f3efb47f0e5b",
+  "source_url": "https://github.com/Lora-net/LoRaMac-node/blob/cf779a46f52f9b22395a207c6853f3efb47f0e5b/src/radio/sx1276/sx1276.c",
+  "source_sha256": "a080edb0c1a159e65b60fbb042d3a129df8276f2c0644255b583eb659e79650f",
+  "oracle_function": "SX1276GetLoRaTimeOnAirNumerator",
+  "unmodified_function_compiled": true,
+  "bandwidths": [
+    125000,
+    250000,
+    500000
+  ],
+  "spreading_factors": [
+    7,
+    12
+  ],
+  "auto_ldro_rule": "Ts>16ms",
+  "comparisons": 4320,
+  "exact_rational_matches": 4320,
+  "license_files": [
+    "LICENSE"
+  ],
+  "explicit_ldro_validation": {
+    "tag": "v4.4.0",
+    "commit": "f42be67be402a40b3586724800771bfe13fb18e6",
+    "source_sha256": "c673faee33abfe5d85e154d9ea9647ff90a878941b41f7e747cde6ebd88c5392",
+    "source_url": "https://github.com/Lora-net/LoRaMac-node/blob/f42be67be402a40b3586724800771bfe13fb18e6/src/radio/sx1276/sx1276.c",
+    "function": "SX1276GetTimeOnAir",
+    "unmodified_function_compiled": true,
+    "compiler": "WSL GCC",
+    "hardware_calls_stubbed_not_executed": true,
+    "cases": 1056,
+    "milliseconds_match": 1056,
+    "short_symbol_ldro_enabled_cases": 480,
+    "payloads": [
+      20,
+      51
+    ]
+  }
+}

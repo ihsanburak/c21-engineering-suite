@@ -1,0 +1,12 @@
+{
+  "product": "C21 Engineering Suite",
+  "edition": "Version 1.0 Classic Edition",
+  "application_version": "1.0.2",
+  "tag": "v1.0-classic",
+  "date": "2026-11-10",
+  "repository_url": "https://github.com/ihsanburak/c21-engineering-suite",
+  "release_url": "https://github.com/ihsanburak/c21-engineering-suite/releases/tag/v1.0-classic",
+  "homepage": "https://c21labs.com",
+  "tns_download_url": "https://github.com/ihsanburak/c21-engineering-suite/releases/download/v1.0-classic/C21_Engineering_Suite_1.0_Classic_Edition.tns",
+  "executable_sha256": "64b2a98a8ca179e2e5c538c83122f2d33c27d1a65082c6df7fad579b9311ea90"
+}

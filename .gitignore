@@ -1,0 +1,15 @@
+build/
+tools/host-compiler/
+__pycache__/
+*.pyc
+.env
+.env.*
+*.pem
+*.key
+private-images/
+tools/emulator/
+node_modules/
+.DS_Store
+Thumbs.db
+
+relink/output/

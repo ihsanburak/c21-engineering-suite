@@ -1,0 +1,1 @@
+Screenshots are actual host-rendered 320x240 application frames. They are not physical-device photographs. Current V1.0.2 preview renders were used where available; the language screens are from accepted V1.0.2.

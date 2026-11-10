@@ -1,0 +1,1 @@
+See [redistribution and relinking instructions](../third_party/REDISTRIBUTION.md). Objects are original C21 application objects, with separately identified Eagle/translation data included. Native runtime dependencies retain their licenses. The original accepted .tns is under dist/; locally relinked outputs are derivatives, not hardware-verified release replacements.

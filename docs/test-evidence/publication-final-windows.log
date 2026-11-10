@@ -1,0 +1,12 @@
+PASS: 2245 checks (math, invalid/boundary inputs, units, UI, glyph coverage, branding, handbook)
+PASS: 3587 interactive key-event checks across all 14 calculators
+PASS: 900 Phase 3B formula-editor checks (both modes, targets, fields, bounds)
+PASS: 5542 Phase 3C monochrome UI checks (1402 frames, 9 scrollable handbook pages)
+PASS: 100036 Phase 3D localization checks (5156 frames, 1168 translations, 15 bilingual handbook entries)
+PASS: 10254 ASCII fallback checks (2930 native-resolution frames)
+PASS: 104178 Phase 3E-1 expansion checks (33883 frames, 26 new calculators, 85 Formula Mode flows, 0 List fallbacks)
+PASS: 146047 Phase 3E-2 RF checks (48028 frames, 47 new targets, 88 reachable targets and Handbook entries, 136 Formula Mode flows, 12 List fallbacks)
+PASS: 124333 Phase 3E-3 PCB/lab checks (40831 frames, 38 new targets, 126 reachable targets and Handbook entries, 87 Formula starts, 31 List fallbacks)
+PASS: 68127 Phase 3F LoRa/RC checks (17118 frames, 12 new targets, 138 reachable targets and Handbook entries, 5376 vendor cases, 29 Formula starts, 10 List fallbacks)
+PASS: 229 native input checks (real adapter/loop, Enter-click equivalence, modeled hold/release; not hardware emulation)
+PASS: 2259 V1.0.2 language menu/migration checks (2 visible choices; 138 Handbook entries)

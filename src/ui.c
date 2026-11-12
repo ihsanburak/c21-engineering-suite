@@ -322,6 +322,7 @@ void app_key(App *a,int k){
  }
  else if(a->screen==S_SYMBOLS&&k==K_ESC)a->screen=S_MENU;
 }
+const unsigned char *app_splash_bitmap(void){return c21_splash_bits;}
 static void logo_pixel(int x,int y,int black){rect(x,y,1,1,black);}
 static void panel(int x,int y,int w,int h){rect(x,y,w,h,0);frame(x,y,w,h,1);}
 static void header(const char *title){

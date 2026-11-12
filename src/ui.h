@@ -31,6 +31,7 @@ typedef struct {
 void app_init(App *app);
 void app_key(App *app,int key);
 void app_draw(const App *app);
+const unsigned char *app_splash_bitmap(void);
 unsigned app_info_lines(const App *app);
 int app_request_formula(App *app,int width,int height);
 #endif

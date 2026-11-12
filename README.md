@@ -1,12 +1,19 @@
 # C21 Engineering Suite
 
-## Version 1.0 Classic Edition
+## Version 1.0.3
 
 **Engineering knowledge. Anywhere. Offline.**
 
 C21 Engineering Suite is an independent, offline engineering calculation and reference application developed by C21 LABS for the original monochrome TI-Nspire Touchpad. Designed for students, engineers, electronics enthusiasts and RF experimenters, it combines interactive mathematical tools with a practical engineering handbook.
 
-[Download the native .tns](https://github.com/ihsanburak/c21-engineering-suite/releases/download/v1.0-classic/C21_Engineering_Suite_1.0_Classic_Edition.tns) · [Release and source packages](https://github.com/ihsanburak/c21-engineering-suite/releases/tag/v1.0-classic) · [Checksums](https://github.com/ihsanburak/c21-engineering-suite/releases/download/v1.0-classic/SHA256SUMS.txt) · [C21 LABS website](https://c21labs.com)
+[Download the native .tns](https://github.com/ihsanburak/c21-engineering-suite/releases/download/v1.0.3/C21_Engineering_Suite_v1.0.3.tns) · [Release and source packages](https://github.com/ihsanburak/c21-engineering-suite/releases/tag/v1.0.3) · [Checksums](https://github.com/ihsanburak/c21-engineering-suite/releases/download/v1.0.3/SHA256SUMS.txt) · [C21 LABS website](https://c21labs.com)
+
+### What changed in 1.0.3
+
+Animated Eagle opening screen with a handwritten `.com` suffix; the final frame stays until input. Enter / Touchpad center-click can skip to the menu. [All changes](CHANGELOG.md).
+
+![Opening screen, actual host framebuffer](media/screenshots/splash-v1.0.3.png)
+![Startup animation, actual host framebuffer](media/screenshots/splash-v1.0.3.gif)
 
 ### Features
 
@@ -49,9 +56,9 @@ Digits select numbered entries (**0=10**); arrows navigate; keyboard Enter/Touch
 
 ### Validation and limitations
 
-Version1.0 Classic Edition packages the exact accepted application build **1.0.2**, as shown in Settings. Its executable is **627,568 bytes**, SHA-256 `64b2a98a8ca179e2e5c538c83122f2d33c27d1a65082c6df7fad579b9311ea90`. Windows and GCC ASan/UBSan runs passed **567,737 checks per platform**; the accepted source fingerprints and clean ARM-build reproducibility were verified. These tests do not establish correctness for every real input or physical-model validity.
+Application **1.0.3** is **628,560 bytes**, SHA-256 `61730cf61148e830245a9e7948187053985d92f19d20e9ed9b68abd5d6b36006`. Fresh Windows and GCC ASan/UBSan results are recorded in [validation](docs/VALIDATION.md). These tests do not establish correctness for every real input or physical-model validity.
 
-The owner reports launch on a real classic Touchpad and three passed owner-assisted numerical examples: **LC resonance, Ohm's law and mW-to-dBm**. Final V1.0.2 center-click and English/Turkce ASCII hardware confirmation remain pending. **Every calculation has not been physically verified; this is not hardware certification.**
+The owner reports launch on a real classic Touchpad and three passed owner-assisted numerical examples: **LC resonance, Ohm's law and mW-to-dBm**. Physical execution and animation timing of 1.0.3 remain unverified; earlier owner-reported checks apply to earlier builds. **Every calculation has not been physically verified; this is not hardware certification.**
 
 Read [validation](docs/VALIDATION.md), [known limitations](docs/KNOWN_LIMITATIONS.md), [technical specifications](docs/TECHNICAL_SPECIFICATIONS.md) and [release notes](RELEASE_NOTES.md). Microstrip uses a zero-thickness model; trace-current estimates are advisory; statistics use four normalized readings; SMD decoding is numeric-only. LoRa targets legacy SX127x SF7–12 and125/250/500kHz; nominal bit rate differs from application throughput. No regulatory compliance, component safety rating, or real instrument/radio integration is promised.
 
@@ -63,7 +70,7 @@ Engineering knowledge should remain accessible on compact, standalone hardware w
 
 Original C21-owned code is [MIT licensed](LICENSE), with [scope and exclusions](LICENSE_SCOPE.md). The Eagle is separately identified [brand artwork](media/ARTWORK_RIGHTS.md). nSDL/SDL, Ndless, Newlib and GCC runtime retain their licenses: [notices](THIRD_PARTY_NOTICES.md), [included source/relink materials](third_party/REDISTRIBUTION.md). No blanket MIT relicense of third parties is implied.
 
-[Build](docs/BUILD.md) · [Contributing](CONTRIBUTING.md) · [Release](https://github.com/ihsanburak/c21-engineering-suite/releases/tag/v1.0-classic). Pinned upstream source, license copies and C21 ARM objects accompany the release/source package for redistribution/relinking obligations. Development tools and firmware are not bundled.
+[Build](docs/BUILD.md) · [Contributing](CONTRIBUTING.md) · [Release](https://github.com/ihsanburak/c21-engineering-suite/releases/tag/v1.0.3). Pinned upstream source, license copies and C21 ARM objects accompany the release/source package for redistribution/relinking obligations. Development tools and firmware are not bundled.
 
 **Developed by C21 LABS — From physical engineering to digital intelligence.**
 

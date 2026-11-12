@@ -5,7 +5,7 @@
 #include <math.h>
 #include "ui.h"
 #include "settings.h"
-static unsigned checks,dispatches,flips,waits,hold_samples;
+static unsigned checks,dispatches,flips,waits,hold_samples,delays,hold_polls;
 static void observed_app_key(App *a,int k);
 #define main c21_native_entry
 #define app_key observed_app_key
@@ -19,19 +19,19 @@ int has_colors=0;
 static int same_key(const t_key *a,const t_key *b){return a&&b&&a->row==b->row&&a->col==b->col&&a->tpad_row==b->tpad_row&&a->tpad_col==b->tpad_col&&a->tpad_arrow==b->tpad_arrow;}
 int (isKeyPressed)(const t_key *k){return same_key(k,held1)||same_key(k,held2);}
 static int poll(const t_key *one,const t_key *two){int k;held1=one;held2=two;k=read_key();held1=held2=0;return k;}
-static void observed_app_key(App *a,int k){dispatches++;app_key(a,k);if(loop_mode){CHECK(a->screen==S_MENU);CHECK(a->depth==(dispatches==2?1:0));CHECK(a->running==(dispatches<4));}}
+static void observed_app_key(App *a,int k){dispatches++;app_key(a,k);if(loop_mode){CHECK(a->screen==S_MENU);if(loop_mode==1){CHECK(a->depth==(dispatches==2?1:0));CHECK(a->running==(dispatches<4));}else{CHECK(a->depth==0&&a->running==(dispatches<2));}}}
 void wait_no_key_pressed(void){
  unsigned j,before=dispatches;waits++;
  /* Model a held press until release; SDK wait/Touchpad I2C are not emulated. */
- if(loop_mode&&held1)for(j=0;j<5;j++){CHECK(read_key()==(flips<=2?K_ENTER:K_ESC));CHECK(dispatches==before);hold_samples++;}
+ if(loop_mode&&held1)for(j=0;j<5;j++){CHECK(read_key()==((same_key(held1,&KEY_NSPIRE_CLICK)||same_key(held1,&KEY_NSPIRE_ENTER))?K_ENTER:K_ESC));CHECK(dispatches==before);hold_samples++;}
  held1=held2=0;
 }
 int SDL_Init(unsigned f){(void)f;return 0;}
 SDL_Surface *SDL_SetVideoMode(int w,int h,int bpp,unsigned f){static SDL_PixelFormat fmt;static SDL_Surface s={&fmt};CHECK(w==320&&h==240&&bpp==8);(void)f;return &s;}
 Uint32 SDL_MapRGB(SDL_PixelFormat *f,unsigned char r,unsigned char g,unsigned char b){(void)f;(void)g;(void)b;return r;}
 int SDL_FillRect(SDL_Surface *s,SDL_Rect *r,Uint32 c){(void)s;(void)r;(void)c;return 0;}
-int SDL_Flip(SDL_Surface *s){(void)s;CHECK(loop_mode);flips++;CHECK(flips<=4);held1=flips<=2?&KEY_NSPIRE_CLICK:&KEY_NSPIRE_ESC;held2=both_keys&&flips<=2?&KEY_NSPIRE_ENTER:0;return 0;}
-void SDL_Delay(unsigned ms){(void)ms;CHECK(0);}
+int SDL_Flip(SDL_Surface *s){(void)s;CHECK(loop_mode);flips++;if(loop_mode==2){CHECK(flips<=SPLASH_ANIM_FRAMES+1);held1=flips>SPLASH_ANIM_FRAMES?&KEY_NSPIRE_ESC:0;held2=0;}else{CHECK(flips<=4);held1=flips<=2?&KEY_NSPIRE_CLICK:&KEY_NSPIRE_ESC;held2=both_keys&&flips<=2?&KEY_NSPIRE_ENTER:0;}return 0;}
+void SDL_Delay(unsigned ms){CHECK(loop_mode==2);CHECK(dispatches==0);if(ms==SPLASH_ANIM_FRAME_MS)delays++;else{CHECK(ms==20&&flips==SPLASH_ANIM_FRAMES);hold_polls++;if(hold_polls==5)held1=&KEY_NSPIRE_CLICK;}}
 void SDL_Quit(void){}
 typedef struct {const t_key *key;int action;} Mapping;
 static const Mapping mappings[]={
@@ -74,5 +74,6 @@ int main(void){
  CHECK(poll(&KEY_NSPIRE_CLICK,&KEY_NSPIRE_DOWN)==K_ENTER);
  flow();
  for(i=0;i<2;i++){loop_mode=1;both_keys=(int)i;flips=waits=dispatches=hold_samples=0;CHECK(c21_native_entry(0,0)==0);CHECK(flips==4&&dispatches==4&&waits==5&&hold_samples==20);loop_mode=0;}
+ loop_mode=2;flips=waits=dispatches=hold_samples=delays=hold_polls=0;CHECK(c21_native_entry(0,0)==0);CHECK(flips==SPLASH_ANIM_FRAMES+1&&dispatches==2&&waits==3&&delays==SPLASH_ANIM_FRAMES-1&&hold_polls==5&&hold_samples==10);loop_mode=0;
  printf("PASS: %u native input checks (real adapter/loop, Enter-click equivalence, modeled hold/release; not hardware emulation)\n",checks);return 0;
 }

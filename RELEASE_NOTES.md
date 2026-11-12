@@ -1,32 +1,30 @@
-# C21 Engineering Suite — Version 1.0 Classic Edition
+# C21 Engineering Suite 1.0.3
 
-**Engineering knowledge. Anywhere. Offline.**
+Released 2026-11-12. Update from application 1.0.2 / Version 1.0 Classic Edition.
 
-First public C21 LABS edition for the original monochrome TI-Nspire Touchpad non-CAS, OS3.9.0.463, with already-working compatible Ndless. The public edition packages unchanged application build **1.0.2**; Settings correctly retains that internal version.
+## Changes / Degisiklikler
 
-- 138 interactive targets /64 documented engineering families, including one formatting utility
-- RF/antenna/LoRa, RLC/electronics/filters, PCB/VNA/laboratory, power and battery tools
-- Real editable values, engineering units, visual formulas, Formula/List modes and contextual technical Handbook
-- English /Turkce ASCII; safe legacy preference migration; Enter/center-click confirmation
-- Original Eagle splash and Modern Mono UI unchanged; no internet/account needed
+- Animated Eagle startup: 56 monochrome frames at a requested 50 ms frame delay. Original logo pixels arrive from below, followed by a handwritten `.com` suffix.
+- The final opening screen stays visible until input; Enter or Touchpad center-click continues to the menu. Input can skip the animation.
+- Settings now displays application version **1.0.3**. Calculation engines, 138 targets and English / Turkce ASCII support are retained.
+- Added animation regression coverage and updated native input-loop tests, build scripts and relink objects.
 
-## Verification and device limits
+Turkce: Eagle acilis animasyonu ve el yazisi `.com` eki eklendi. Son kare tus girisine kadar kalir; Enter veya orta tik ile menuye gecilir. Hesaplama motorlari korunmustur.
 
-**567,737 host checks per platform**, Windows and GCC ASan/UBSan. Accepted source/resource hashes and native loader packaging verified; clean staged ARM build matches the accepted .tns byte-for-byte. LoRa reference comparisons cover5376 pinned Semtech cases. These checks do not certify every mathematical input or every physical model.
+## Opening screen / Acilis ekrani
 
-Owner-reported physical launch and three examples passed: LC resonance, Ohm's law and mW-to-dBm. Final build1.0.2 center-click and language-menu behavior still await owner confirmation. Not all targets have been physically verified. No firmware/Ndless change is needed or included.
+![Opening screen](https://raw.githubusercontent.com/ihsanburak/c21-engineering-suite/v1.0.3/media/screenshots/splash-v1.0.3.png)
 
-## Files and licensing
+![Startup animation](https://raw.githubusercontent.com/ihsanburak/c21-engineering-suite/v1.0.3/media/screenshots/splash-v1.0.3.gif)
 
-- `C21_Engineering_Suite_1.0_Classic_Edition.tns`: **627,568 bytes**, genuine native ARM/Ndless application.
-- Application ZIP: executable, installation/EN/TR guides, limitations and required redistribution materials.
-- Source ZIP: reviewed C21 source/tests/docs, component source ZIPs, notices and own ARM objects/relink recipe.
-- `SHA256SUMS.txt` and individual executable checksum.
+Actual 320x240 C framebuffer host previews; these are not calculator photographs. Physical animation timing and device execution of 1.0.3 remain unverified.
 
-SHA-256 of the executable: `64b2a98a8ca179e2e5c538c83122f2d33c27d1a65082c6df7fad579b9311ea90`.
+## Download and verification
 
-Original C21 code is MIT; Eagle and third-party components retain separate terms. Preserve supplied component source/build/notices and relink materials when redistributing. See THIRD_PARTY_NOTICES.md and third_party/REDISTRIBUTION.md in the source/app package. No generic source-link-only or blanket MIT licensing claim is made.
+Native ARM/Ndless executable: `C21_Engineering_Suite_v1.0.3.tns`, **628,560 bytes**.
 
-Official Eagle master SVG/transparent PNG are still unavailable. No replacement/new promotional artwork was invented; application branding remains intact. C21 LABS website project-page integration is pending.
+SHA-256: `61730cf61148e830245a9e7948187053985d92f19d20e9ed9b68abd5d6b36006`.
 
-[Installation](https://github.com/ihsanburak/c21-engineering-suite/blob/main/docs/INSTALL.md) · [Known limitations](https://github.com/ihsanburak/c21-engineering-suite/blob/main/docs/KNOWN_LIMITATIONS.md) · [C21 LABS](https://c21labs.com). Independent project, not affiliated with or endorsed by Texas Instruments or the Ndless project.
+Original TI-Nspire Touchpad non-CAS, OS 3.9.0.463, existing compatible Ndless. Preserve your previous executable before transferring the update. No firmware change is included.
+
+**569,912 checks passed per platform**, Windows and GCC ASan/UBSan (13 suites). Test results are recorded in [validation](docs/VALIDATION.md). Source archives include dependency source, notices and all 13 application ARM objects for relinking. Original C21 code is MIT; artwork and dependencies retain separate terms.

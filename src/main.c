@@ -3,6 +3,7 @@
 #include "ui.h"
 #include "display.h"
 #include "settings.h"
+#include "splash_anim.h"
 static int read_key(void){
  static const t_key *digits[]={&KEY_NSPIRE_0,&KEY_NSPIRE_1,&KEY_NSPIRE_2,&KEY_NSPIRE_3,&KEY_NSPIRE_4,&KEY_NSPIRE_5,&KEY_NSPIRE_6,&KEY_NSPIRE_7,&KEY_NSPIRE_8,&KEY_NSPIRE_9};
  unsigned i;
@@ -34,17 +35,22 @@ static int read_key(void){
  return K_NONE;
 }
 int main(int argc,char **argv){
- SDL_Surface *screen;App app;int x,y,key;Uint32 white,black;
+ SDL_Surface *screen;App app;int x,y,key;Uint32 white,black;unsigned splash_frame=0;
  if(SDL_Init(SDL_INIT_VIDEO)<0)return 1;
  screen=SDL_SetVideoMode(320,240,has_colors?16:8,SDL_SWSURFACE);
  if(!screen){SDL_Quit();return 1;}
  white=SDL_MapRGB(screen->format,255,255,255);black=SDL_MapRGB(screen->format,0,0,0);
  app_init(&app);if(argc>0&&settings_bind_executable(argv[0]))loc_set(settings_load());wait_no_key_pressed();
  while(app.running){
-  app_draw(&app);SDL_FillRect(screen,0,white);
+  if(app.screen==S_SPLASH)splash_anim_draw(&app,splash_frame);else app_draw(&app);
+  SDL_FillRect(screen,0,white);
   /* Run-length rectangles work with both monochrome and color SDL surfaces. */
   for(y=0;y<240;y++)for(x=0;x<320;){int start=x;SDL_Rect r;while(x<320&&!framebuffer[y*320+x])x++;start=x;while(x<320&&framebuffer[y*320+x])x++;if(x>start){r.x=(Sint16)start;r.y=(Sint16)y;r.w=(Uint16)(x-start);r.h=1;SDL_FillRect(screen,&r,black);}}
   SDL_Flip(screen);
+  if(app.screen==S_SPLASH&&splash_frame<SPLASH_ANIM_FRAMES-1){
+   key=read_key();
+   if(key==K_NONE){splash_frame++;SDL_Delay(SPLASH_ANIM_FRAME_MS);continue;}
+  }else
   do{key=read_key();if(key==K_NONE)SDL_Delay(20);}while(key==K_NONE);
   app_key(&app,key);wait_no_key_pressed();
  }

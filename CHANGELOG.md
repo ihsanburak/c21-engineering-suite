@@ -1,5 +1,13 @@
 # Changelog
 
+## 1.0.3 — 2026-11-12
+
+- Added 56-frame Eagle startup animation and handwritten .com suffix.
+- Kept final splash visible until input; keyboard Enter / center-click can skip to menu.
+- Updated Settings version, animation/native-input tests, source and relink materials.
+- Added opening PNG/GIF previews to README and release notes.
+- Physical timing and execution of 1.0.3 remain unverified.
+
 ## 1.0 Classic Edition — 2026-11-10
 
 First authorized C21 LABS public edition, packaging unchanged1.0.2 with source, documentation, MIT license scope and separate dependency source/relink/notices. Edition naming is independent of internal patch version. Existing packages are preserved.

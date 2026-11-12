@@ -1,11 +1,30 @@
 {
-  "edition": "Version 1.0 Classic Edition",
-  "application_version": "1.0.2",
-  "date": "2026-11-10",
-  "fresh_release_tree_checks_per_platform": {
-    "Windows": 567737,
-    "GCC ASan/UBSan": 567737
+  "product": "C21 Engineering Suite",
+  "application_version": "1.0.3",
+  "tag": "v1.0.3",
+  "date": "2026-11-12",
+  "build_date": "2026-11-10",
+  "repository_url": "https://github.com/ihsanburak/c21-engineering-suite",
+  "release_url": "https://github.com/ihsanburak/c21-engineering-suite/releases/tag/v1.0.3",
+  "tns_download_url": "https://github.com/ihsanburak/c21-engineering-suite/releases/download/v1.0.3/C21_Engineering_Suite_v1.0.3.tns",
+  "artifact": "C21_Engineering_Suite_v1.0.3.tns",
+  "bytes": 628560,
+  "sha256": "61730cf61148e830245a9e7948187053985d92f19d20e9ed9b68abd5d6b36006",
+  "physical_verified": false,
+  "native_verification": {
+    "elf_class": "ELF32",
+    "endianness": "little",
+    "machine": "ARM",
+    "zehn_version": 1,
+    "zehn_relocations": 6459,
+    "zehn_flags": 8,
+    "loader_allocation_bytes": 716276,
+    "official_loader_bytes": 492,
+    "tns_bytes": 628560,
+    "sha256": "61730cf61148e830245a9e7948187053985d92f19d20e9ed9b68abd5d6b36006",
+    "runtime_tested": false
   },
+  "host_checks_per_platform": 569912,
   "suite_counts": [
     2245,
     3587,
@@ -17,30 +36,9 @@
     146047,
     124333,
     68127,
-    229,
-    2259
+    495,
+    2259,
+    1909
   ],
-  "native": {
-    "elf_class": "ELF32",
-    "endianness": "little",
-    "machine": "ARM",
-    "zehn_version": 1,
-    "zehn_relocations": 6455,
-    "zehn_flags": 8,
-    "loader_allocation_bytes": 715284,
-    "official_loader_bytes": 492,
-    "tns_bytes": 627568,
-    "sha256": "64b2a98a8ca179e2e5c538c83122f2d33c27d1a65082c6df7fad579b9311ea90",
-    "runtime_tested": false
-  },
-  "source_and_runtime_assets_unchanged": true,
-  "clean_arm_build_matches_accepted": true,
-  "component_source_zip_integrity": "passed",
-  "original_code_license": "MIT, owner authorized",
-  "brand_artwork": "owner-authorized project use, separate from MIT; master SVG/transparent PNG not supplied",
-  "redistribution_materials": "pinned nSDL/Ndless source ZIPs, license copies, own objects and relink instructions included",
-  "website": "https://c21labs.com",
-  "website_verification": "live C21 LABS / Captain21 site links the authenticated owner ihsanburak GitHub projects; c21lab.com did not resolve",
-  "physical_status": "owner launch + LC/Ohm/mW-dBm examples passed; final1.0.2 center-click/language checks pending",
-  "hardware_certification": false
+  "native_rebuild_byte_identical": true
 }

@@ -1,28 +1,30 @@
 {
-  "edition": "Version 1.0 Classic Edition",
-  "application_version": "1.0.2",
-  "comparison": "clean staged-source native build byte-identical to accepted executable",
-  "sha256": "64b2a98a8ca179e2e5c538c83122f2d33c27d1a65082c6df7fad579b9311ea90",
-  "bytes": 627568,
-  "sdk_commit": "37d61aa22762171ffc9b0abf2565f13d09aec70f",
-  "compiler": "ARM GCC 14.2.0",
-  "binutils": "2.44",
-  "newlib": "4.5.0.20241231",
-  "scope": "same installed pinned environment; not arbitrary-machine reproducibility",
+  "product": "C21 Engineering Suite",
+  "application_version": "1.0.3",
+  "tag": "v1.0.3",
+  "date": "2026-11-12",
+  "build_date": "2026-11-10",
+  "repository_url": "https://github.com/ihsanburak/c21-engineering-suite",
+  "release_url": "https://github.com/ihsanburak/c21-engineering-suite/releases/tag/v1.0.3",
+  "tns_download_url": "https://github.com/ihsanburak/c21-engineering-suite/releases/download/v1.0.3/C21_Engineering_Suite_v1.0.3.tns",
+  "artifact": "C21_Engineering_Suite_v1.0.3.tns",
+  "bytes": 628560,
+  "sha256": "61730cf61148e830245a9e7948187053985d92f19d20e9ed9b68abd5d6b36006",
+  "physical_verified": false,
   "native_verification": {
     "elf_class": "ELF32",
     "endianness": "little",
     "machine": "ARM",
     "zehn_version": 1,
-    "zehn_relocations": 6455,
+    "zehn_relocations": 6459,
     "zehn_flags": 8,
-    "loader_allocation_bytes": 715284,
+    "loader_allocation_bytes": 716276,
     "official_loader_bytes": 492,
-    "tns_bytes": 627568,
-    "sha256": "64b2a98a8ca179e2e5c538c83122f2d33c27d1a65082c6df7fad579b9311ea90",
+    "tns_bytes": 628560,
+    "sha256": "61730cf61148e830245a9e7948187053985d92f19d20e9ed9b68abd5d6b36006",
     "runtime_tested": false
   },
-  "host_checks_per_platform": 567737,
+  "host_checks_per_platform": 569912,
   "suite_counts": [
     2245,
     3587,
@@ -34,8 +36,9 @@
     146047,
     124333,
     68127,
-    229,
-    2259
+    495,
+    2259,
+    1909
   ],
-  "physical_v102_verified": false
+  "native_rebuild_byte_identical": true
 }

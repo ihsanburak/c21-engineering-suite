@@ -1,3 +1,5 @@
+> Current release: **1.0.3**. Startup animation added; physical timing/execution remain unverified. Current binary and test evidence: [validation](VALIDATION.md) and [manifest](../dist/build-manifest.json). Earlier 1.0.2 size/test figures below are historical.
+
 # Known limitations — 1.0 Classic Edition
 
 | Area | Scope and limit |

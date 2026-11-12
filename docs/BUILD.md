@@ -1,6 +1,6 @@
 # Build and reproduce
 
-The staged source is the accepted application **1.0.2**. Public edition naming does not change its version, math, UI, keys or artwork.
+The source builds application **1.0.3**, including the animated opening screen. Calculation engines are retained from 1.0.2.
 
 ## Native ARM
 
@@ -14,8 +14,8 @@ The Makefile compiles C in ARM mode, links with nSDL/runtime and libm, produces 
 
 Linux: `make test HOST_CC=gcc`. Sanitizers: `bash tools/test-sanitized.sh` using GCC with ASan/UBSan. Windows: `powershell -NoProfile -ExecutionPolicy Bypass -File tools/test-host.ps1 -Compiler <your-tcc.exe>` with an existing TinyCC toolchain. A compiler is not bundled. Python 3 is used for asset/resource scripts; Pillow is used for previews and publication artwork conversion only, not the application.
 
-All twelve test sources and their vector headers are included. The original bitmap font generator does not extract a system font. Source translations remain Unicode while ASCII is applied at display time. Test-only SDK key constants and SDL/OS stubs compile the real native input adapter; these do not emulate Touchpad electronics or replace genuine SDK headers in an ARM build.
+All thirteen test sources and their vector headers are included. The original bitmap font generator does not extract a system font. Source translations remain Unicode while ASCII is applied at display time. Test-only SDK key constants and SDL/OS stubs compile the real native input adapter; these do not emulate Touchpad electronics or replace genuine SDK headers in an ARM build.
 
 ## Reproducibility scope
 
-The preparation report records whether a clean build from this staged source, using the installed pinned toolchain, matches the accepted V1.0.2 executable. That is a same-environment comparison, not a claim of arbitrary-machine or future-toolchain reproducibility. Pinned component source/relink/notices are included under third_party/ and relink/; preserve these when redistributing. Consult `dist/build-manifest.json`, docs/REPRODUCIBILITY.json and third_party/REDISTRIBUTION.md for actual hashes/evidence. No CI auto-publication, network credentials or calculator communication is configured.
+The preparation report records whether a clean build from this staged source, using the installed pinned toolchain, matches the published 1.0.3 executable. That is a same-environment comparison, not a claim of arbitrary-machine or future-toolchain reproducibility. Pinned component source/relink/notices are included under third_party/ and relink/; preserve these when redistributing. Consult `dist/build-manifest.json`, docs/REPRODUCIBILITY.json and third_party/REDISTRIBUTION.md for actual hashes/evidence. No CI auto-publication, network credentials or calculator communication is configured.
